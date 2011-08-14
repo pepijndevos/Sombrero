@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sombrero</title>
+		<link rel="stylesheet" href="/{{ database }}/_design/Sombrero/style.css" />
+		<script type="text/javascript" src="/_utils/script/jquery.js"></script>
+		<script type="text/javascript" src="/_utils/script/jquery.couch.js"></script>
+		<script type="text/javascript">
+			var db = $.couch.db("{{ database }}");
+		</script>
+		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/main.js"></script>
+		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/editor.js"></script>
+	</head>
+	<body>
+	<ul id="menu">
+		<li class="action score box">
+			<div class="counter">0</div>
+			<div class="caption">completed today</div>
+		</li>
+		<li class="action box"><a href="#">Action Steps</a></li>
+		<li class="reference box"><a href="#">References</a></li>
+		<li class="backburner box"><a href="#">Backburner</a></li>
+	</ul>
+	{{> editor }}
+	<ol id="listing">

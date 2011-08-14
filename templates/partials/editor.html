@@ -1,0 +1,13 @@
+<div class="editor">
+	<div class="action box">
+		<div contenteditable="true" class="textarea">{{{ text }}}</div>
+		<input class="do" type="button" value="Do!" />
+	</div>
+	<input type="range" min="0" max="3" step="1" value="{{ priority }}{{^ priority }}1{{/ priority }}" class="priority box" />
+	{{# doc }}
+	<input class="doc" type="hidden" value="{{ doc }}" />
+	{{/ doc }}
+	{{^ doc }}
+	<input class="doc" type="hidden" value="{}" />
+	{{/ doc }}
+</div>
