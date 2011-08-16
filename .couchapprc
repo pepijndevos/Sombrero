@@ -1,1 +1,10 @@
-{}
+{
+  "env" : {
+    "public" : {
+      "db" : "http://pepijndevos.iriscouch.com/sombrero"
+    },
+    "default" : {
+      "db" : "http://localhost:5984/sombrero"
+    }
+  }
+}
