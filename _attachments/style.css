@@ -3,6 +3,7 @@ body {
 	background-color: #999;
 	color: white;
 	/*width: 800px;*/
+    display: table;
 }
 
 div, ul, ol, form, li, input, textarea {
@@ -47,6 +48,10 @@ input[type="button"]:active {
 	vertical-align: bottom;
 	text-align: center;
 	margin: 0 10px 10px 0;
+}
+
+#menu li:last-child {
+    margin-right: 0;
 }
 
 #menu a {
