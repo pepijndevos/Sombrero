@@ -3,7 +3,14 @@
 		<div contenteditable="true" class="textarea">{{{ text }}}</div>
 		<input class="do" type="button" value="Do!" />
 	</div>
-	<input type="range" min="0" max="3" step="1" value="{{ priority }}{{^ priority }}1{{/ priority }}" class="priority box" />
+	<div class="meta">
+		<input class="action" type="button" value="Verb" />
+		<input class="reference" type="button" value="Reference" />
+		<label class="priority">
+			<input type="range" min="0" max="3" step="1" value="{{ priority }}{{^ text_priority }}1{{/ text_priority }}" />
+			<span>{{^ text_priority }}Normal{{/ text_priority }}{{ text_priority }}</span>
+		</label>
+	</div>
 	{{# doc }}
 	<input class="doc" type="hidden" value="{{ doc }}" />
 	{{/ doc }}

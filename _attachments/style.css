@@ -3,7 +3,7 @@ body {
 	background-color: #999;
 	color: white;
 	/*width: 800px;*/
-    display: table;
+	display: table;
 }
 
 div, ul, ol, form, li, input, textarea {
@@ -21,10 +21,12 @@ div, ul, ol, form, li, input, textarea {
 
 .reference {
 	background-color: #0066cc;
+	color: white;
 }
 
 .action {
 	background-color: #cc3300;
+	color: white;
 }
 
 input[type="button"] {
@@ -67,6 +69,10 @@ input[type="button"]:active {
 	font-size: 0.4em;
 }
 
+.editor {
+	overflow: hidden;
+}
+
 .editor .action.box {
 	background-color: white;
 	height: 3em;
@@ -89,46 +95,56 @@ input[type="button"]:active {
 	float: right;
 }
 
-.editor input.priority {
-	-webkit-appearance: none;
-	-webkit-box-sizing: border-box;
-	background: -webkit-linear-gradient(180deg, #cc3300, #333);
-	width: 100%;
+.editor input.reference {
+	background-color: #0066cc;
+	color: white;
 }
 
-.editor input.priority::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	-webkit-border-radius: 5px;
-	background-color: #fff;
-	height: 20px;
-	width: 20px;
-	margin: -10px 0;
+.editor input.action {
+	background-color: #cc3300;
+	color: white;
+}
+
+.editor input[type=button]:active {
+	background-color: #333;
+}
+
+.editor .meta * {
+	vertical-align: middle;
+}
+
+.editor .meta input[type=button] {
+	padding: 5px;
+}
+
+#listing {
+	margin-top: 10px;
 }
 
 #listing li {
-	padding: 20px;
+	padding: 10px;
 	background-color: #333;
-	border: 5px solid #333;
+	border: 3px solid #333;
 	list-style-position: inside;
 	position: relative;
 }
 
 #listing li.priority-3 {
-	font-size: 1.5em;
 	border: 5px solid #cc3300;
+	padding: 8px;
 }
 
 #listing li.priority-2 {
-	border: 5px solid #cc3300;
+	border-color: #cc3300;
 }
 
 #listing li.completed {
 	font-size: 1em;
-	border: 5px solid #888;
+	border-color: #888;
 	color: #888;
 }
 
-#listing li .meta {
+#listing li > .meta {
 	display: none;
 	position: absolute;
 	top: 0;
@@ -136,15 +152,15 @@ input[type="button"]:active {
 	padding: 5px;
 }
 
-#listing li:hover .meta {
+#listing li:hover > .meta {
 	display: block;
 }
 
-#listing li .meta input {
+#listing li > .meta input {
 	padding: 3px;
 }
 
-#listing li.completed .meta input.done,
+#listing li.completed > .meta input.done,
 #listing li:not(.completed) .meta input.redo {
 	display: none;
 }

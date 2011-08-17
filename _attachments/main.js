@@ -34,7 +34,7 @@ $(function() {
 			});
 			score();
 		});
-	}, 100);
+	}, 1000);
 
 	$(".meta input.done").live('click', function() {
 		set_status($(this).closest("li[id]").attr('id'));
