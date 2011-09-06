@@ -29,10 +29,16 @@ $(function() {
 			var url = db.uri + "_design/Sombrero/_show/action/" + id;
 			console.log(id);
 			$.get(url, function(data) {
-				$("#" + id).remove();
-				$("#listing").prepend(data);
+				if($("#" + id).length == 0) {
+					$("#listing").prepend(data);
+				} else {
+					$("#" + id).replaceWith(data);
+				}
 			});
 			score();
+			setTimeout(function() {
+				$("#listing li").tsort(":not(.completed)", {data:"priority", order:"desc"});
+			}, 2000);
 		});
 	}, 1000);
 

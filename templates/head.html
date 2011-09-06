@@ -3,11 +3,12 @@
 	<head>
 		<title>Sombrero</title>
 		<link rel="stylesheet" href="/{{ database }}/_design/Sombrero/style.css" />
-		<script type="text/javascript" src="/_utils/script/jquery.js"></script>
+		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/jquery.js"></script>
 		<script type="text/javascript" src="/_utils/script/jquery.couch.js"></script>
 		<script type="text/javascript">
 			var db = $.couch.db("{{ database }}");
 		</script>
+		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/jquery.tinysort.js"></script>
 		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/main.js"></script>
 		<script type="text/javascript" src="/{{ database }}/_design/Sombrero/editor.js"></script>
 	</head>
