@@ -7,9 +7,17 @@ $(function() {
 			"status" : "active",
 		};
 
+		var textfield = editor.find(".textarea");
+		var verbs = [];
+
+		textfield.find("a.action").each(function(idx, val) {
+			verbs.push(val.innerHTML.toLowerCase());
+		});
+
 		$.extend(doc, JSON.parse(editor.find(".doc").val()), {
-			"text" : editor.find(".textarea").html(),
+			"text" : textfield.html(),
 			"priority" : +editor.find(".priority input").val(),
+			"verbs": verbs,
 		});
 
 		doc.created_at = doc.created_at || Date.now();
@@ -24,13 +32,13 @@ $(function() {
 	});
 
 	$(".editor input.action").live('click', function(event) {
-		var el = document.createElement("span");
+		var el = document.createElement("a");
 		el.setAttribute("class", "action");
 		window.getSelection().getRangeAt(0).surroundContents(el);
 	});
 
 	$(".editor input.reference").live('click', function(event) {
-		var el = document.createElement("span");
+		var el = document.createElement("a");
 		el.setAttribute("class", "reference");
 		window.getSelection().getRangeAt(0).surroundContents(el);
 	});
